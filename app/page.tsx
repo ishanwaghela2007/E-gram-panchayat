@@ -1,102 +1,177 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2, Sparkles, Shield, Zap } from "lucide-react";
+import HeroCanvas from "@/components/HeroCanvas";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Hero */}
+      <section className="relative h-[100svh] overflow-hidden">
+        <HeroCanvas />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        {/* Gradient overlays */}
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%_-20%,rgba(123,255,175,0.18),transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(600px_300px_at_80%_20%,rgba(106,182,255,0.12),transparent_60%)]" />
+
+        {/* Content */}
+        <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-6 text-center">
+          <ScrollReveal once>
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs backdrop-blur-sm">
+              <Sparkles className="h-3.5 w-3.5 text-emerald-300" />
+              <span className="tracking-wide">Now with 3D & smooth scroll</span>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal once className="mt-6">
+            <h1 className="text-balance text-4xl font-semibold leading-tight sm:text-6xl md:text-7xl">
+              Build delightful apps with Next.js 15
+            </h1>
+          </ScrollReveal>
+
+          <ScrollReveal once className="mt-5 max-w-2xl">
+            <p className="text-pretty text-base text-white/70 sm:text-lg">
+              A modern starter with Tailwind CSS v4, Three.js hero, and subtle
+              motion that feels fast and premium.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal once className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="#get-started"
+              className="group inline-flex items-center gap-2 rounded-full bg-emerald-400 px-5 py-3 font-medium text-black transition hover:bg-emerald-300"
+            >
+              Get started
+              <ArrowRight className="h-4 w-4 transition -translate-x-0 group-hover:translate-x-0.5" />
+            </Link>
+            <Link
+              href="#features"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 font-medium text-white/90 backdrop-blur-sm transition hover:bg-white/10"
+            >
+              See features
+            </Link>
+          </ScrollReveal>
+
+          <ScrollReveal once className="mt-10 flex items-center gap-6 text-sm text-white/60">
+            <div className="flex items-center gap-2">
+              <Shield className="h-4 w-4 text-emerald-300" />
+              <span>No tracking, privacy-first</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Zap className="h-4 w-4 text-emerald-300" />
+              <span>Fast, edge-ready</span>
+            </div>
+          </ScrollReveal>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Logos or trust bar */}
+      <section className="mx-auto max-w-6xl px-6 py-12">
+        <div className="grid grid-cols-2 items-center gap-8 opacity-80 sm:grid-cols-4">
+          {[
+            "/next.svg",
+            "/window.svg",
+            "/globe.svg",
+            "/file.svg",
+          ].map((src, i) => (
+            <ScrollReveal key={i}>
+              <Image
+                src={src}
+                alt="logo"
+                width={96}
+                height={24}
+                className="mx-auto h-6 w-auto dark:invert"
+              />
+            </ScrollReveal>
+          ))}
+        </div>
+      </section>
+
+      {/* Features */}
+      <section id="features" className="mx-auto max-w-7xl px-6 py-20">
+        <ScrollReveal once>
+          <h2 className="text-center text-3xl font-semibold sm:text-4xl">
+            Everything you need to launch faster
+          </h2>
+        </ScrollReveal>
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              title: "Tailwind CSS v4",
+              desc: "Preconfigured with modern theming and dark-ready styles.",
+              icon: Sparkles,
+            },
+            {
+              title: "3D Hero",
+              desc: "Interactive WebGL scene powered by Three.js.",
+              icon: Zap,
+            },
+            {
+              title: "Auth-ready",
+              desc: "Clerk setup included for dashboard flows.",
+              icon: Shield,
+            },
+          ].map((f, i) => (
+            <ScrollReveal key={i} className="h-full">
+              <div className="group h-full rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition hover:bg-white/10">
+                <f.icon className="h-6 w-6 text-emerald-300" />
+                <h3 className="mt-4 text-lg font-semibold">{f.title}</h3>
+                <p className="mt-2 text-white/70">{f.desc}</p>
+                <div className="mt-4 flex items-center gap-1 text-emerald-300">
+                  <span className="text-sm">Learn more</span>
+                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section id="get-started" className="relative overflow-hidden py-24">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(900px_400px_at_30%_0%,rgba(123,255,175,0.16),transparent_60%)]" />
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <ScrollReveal once>
+            <h2 className="text-balance text-3xl font-semibold sm:text-4xl">
+              Ready to ship your next idea?
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal once className="mx-auto mt-4 max-w-2xl">
+            <p className="text-white/70">
+              Start with a beautiful, performant foundation. Extend with your
+              own components and pages in minutes.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal once className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/dashboard"
+              className="inline-flex items-center gap-2 rounded-full bg-emerald-400 px-6 py-3 font-medium text-black transition hover:bg-emerald-300"
+            >
+              Go to dashboard
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="https://nextjs.org/docs"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 font-medium text-white/90 backdrop-blur-sm transition hover:bg-white/10"
+            >
+              Documentation
+            </Link>
+          </ScrollReveal>
+
+          <div className="mt-8 flex items-center justify-center gap-3 text-sm text-white/70">
+            <CheckCircle2 className="h-4 w-4 text-emerald-300" />
+            <span>TypeScript, App Router, and ESLint ready</span>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-white/10 py-10 text-center text-sm text-white/60">
+        <div className="mx-auto max-w-7xl px-6">
+          <p>
+            © {new Date().getFullYear()} Your Company. Built with Next.js & Tailwind.
+          </p>
+        </div>
       </footer>
     </div>
   );
