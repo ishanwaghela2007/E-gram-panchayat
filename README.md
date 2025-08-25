@@ -1,6 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project
 
-## Getting Started
+A modern web application built with Next.js, featuring authentication powered by Clerk. This project serves as a dashboard application with various govt services(for example: aadhaar, voter id, driving licence etc.) and features.
+
+## 🚀 Features
+
+- **Authentication**: Secure user authentication using Clerk
+- **Dashboard**: Main application dashboard with various features
+- **Services**: Dedicated section for different services
+- **Responsive Design**: Works on desktop and mobile devices
+
+## 🏗️ Project Structure
+
+```
+project2/
+├── app/
+│   ├── pages/
+│   │   ├── auth/          # Authentication related pages
+│   │   ├── dashboard/     # Main dashboard components
+│   │   └── services/      # Application services
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx         # Root layout component
+│   └── page.tsx           # Home page
+├── components/            # Reusable UI components
+│   ├── AccessibilityBar.tsx
+│   ├── GovHeroBadge.tsx
+│   ├── HeroCanvas.tsx
+│   └── Navbar.tsx
+├── public/                # Static assets
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   └── vercel.svg
+├── .gitignore
+├── next.config.js         # Next.js configuration
+├── package.json
+└── tsconfig.json          # TypeScript configuration
+```
+
+## 🔐 Authentication
+
+This project uses [Clerk](https://clerk.com/) for authentication. Clerk provides:
+- Secure user authentication
+- User management
+- Social logins
+- Session management
+- Role-based access control
+
+## 🚀 Getting Started
 
 First, run the development server:
 
@@ -20,17 +67,16 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## 📚 Learn More
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API.
+- [Clerk Documentation](https://clerk.com/docs) - Learn how to customize authentication.
+- [Tailwind CSS](https://tailwindcss.com/docs) - For styling components.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Deploy your Next.js application on [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme), the easiest way to deploy Next.js apps.
 
-## Deploy on Vercel
+## 📝 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is open source and available under the [MIT License](LICENSE).
