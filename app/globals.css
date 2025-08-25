@@ -19,6 +19,16 @@
   }
 }
 
+/* High contrast accessibility mode */
+.high-contrast, .high-contrast body {
+  --background: #000000 !important;
+  --foreground: #ffffff !important;
+}
+.high-contrast a, .high-contrast button {
+  outline: 2px solid #ffdb3d;
+  outline-offset: 2px;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
