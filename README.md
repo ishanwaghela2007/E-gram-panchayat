@@ -79,4 +79,4 @@ Deploy your Next.js application on [Vercel](https://vercel.com/new?utm_medium=de
 
 ## 📝 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the [MIT License](licence.md).
